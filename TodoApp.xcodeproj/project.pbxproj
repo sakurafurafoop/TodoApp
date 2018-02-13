@@ -14,6 +14,7 @@
 		18756E9C2032D1D600827C52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18756E9A2032D1D600827C52 /* LaunchScreen.storyboard */; };
 		18756EA72032D1D600827C52 /* TodoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18756EA62032D1D600827C52 /* TodoAppTests.swift */; };
 		18756EB22032D1D600827C52 /* TodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18756EB12032D1D600827C52 /* TodoAppUITests.swift */; };
+		18756EC02032D98000827C52 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18756EBF2032D98000827C52 /* TodoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		18756EAD2032D1D600827C52 /* TodoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18756EB12032D1D600827C52 /* TodoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppUITests.swift; sourceTree = "<group>"; };
 		18756EB32032D1D600827C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18756EBF2032D98000827C52 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				18756E982032D1D600827C52 /* Assets.xcassets */,
 				18756E9A2032D1D600827C52 /* LaunchScreen.storyboard */,
 				18756E9D2032D1D600827C52 /* Info.plist */,
+				18756EBF2032D98000827C52 /* TodoViewController.swift */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18756E942032D1D600827C52 /* ViewController.swift in Sources */,
+				18756EC02032D98000827C52 /* TodoViewController.swift in Sources */,
 				18756E922032D1D600827C52 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
