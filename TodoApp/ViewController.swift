@@ -8,20 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSource {
     
-    var saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
+    //saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
     @IBOutlet var table: UITableView!//todoを表示させるためのTableView
     
-    var todoArray = [String]()//todoを表示させる配列
+    var todoArray:[String] = []//todoを表示させる配列
     
-
+    //var saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         table.dataSource = self
+        todoArray = userdefaults.object(forKey: "todoTitle") as! [String]//todoArrayにuserdefaultsに入っている配列を代入する
+        //todoTextField.text = saveTodoTitle.object(forKey:"todoTitle") as? String
+        table.reloadData()
+        //もしuserdefaultsが空っぽである場合
+        if  userdefaults.object(forKey: "todoTitle") != nil{
+//             todoArray = saveTodoTitle.object(forKey: "todoTitle") as! [String]
+            print(userdefaults.object(forKey: "todoTitle"))
+            
+        }
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        todoArray = userdefaults.object(forKey: "todoTitle") as! [String]
+        table.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,6 +52,15 @@ class ViewController: UIViewController,UITableViewDataSource {
         cell?.textLabel?.text = todoArray[indexPath.row]
         
         return cell!
+    }
+    
+    //削除する
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            todoArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
     }
     
     

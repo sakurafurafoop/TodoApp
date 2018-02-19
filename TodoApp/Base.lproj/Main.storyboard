@@ -38,17 +38,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="cUh-z4-Zrk">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="d3J-rb-a2Q">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qbz-PP-MyV">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="d3J-rb-a2Q">
                             <connections>
-                                <segue destination="dbd-hv-bRb" kind="presentation" id="Gxq-yK-CbE"/>
+                                <segue destination="dbd-hv-bRb" kind="showDetail" action="showViewController:sender:" id="qf1-x5-Xg5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="VSK-90-yu9" id="8AF-Nh-ebj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,6 +64,9 @@
                                 <rect key="frame" x="171" y="534" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveTodo" destination="dbd-hv-bRb" eventType="touchUpInside" id="Big-Qe-ckh"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5K-ht-ALu">
                                 <rect key="frame" x="40" y="201" width="295" height="30"/>
@@ -78,6 +79,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4ea-zs-WG4"/>
                     </view>
+                    <connections>
+                        <outlet property="todoTextField" destination="s5K-ht-ALu" id="3ne-Qt-8hB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0b-uf-SPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
