@@ -26,7 +26,7 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
         table.reloadData()
         //もしuserdefaultsが空っぽである場合
         if  userdefaults.object(forKey: "todoTitle") != nil{
-//             todoArray = saveTodoTitle.object(forKey: "todoTitle") as! [String]
+//          todoArray = saveTodoTitle.object(forKey: "todoTitle") as! [String]
             print(userdefaults.object(forKey: "todoTitle"))
             
         }
@@ -48,9 +48,7 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
     //セルに配列の内容を表示させるメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        
         cell?.textLabel?.text = todoArray[indexPath.row]
-        
         return cell!
     }
     
@@ -60,7 +58,7 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
             todoArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        
+        userdefaults.set(todoArray, forKey: "todoTitle")//
     }
     
     

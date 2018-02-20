@@ -20,7 +20,7 @@ class TodoViewController: UIViewController/*,UITableViewDataSource */{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         if  userdefaults.object(forKey: "todoTitle") != nil{
-             print(userdefaults.object(forKey: "todoTitle"))
+            print(userdefaults.object(forKey: "todoTitle"))
             todoSaveArray = userdefaults.object(forKey:"todoTitle") as! [String]
         }
     }
@@ -31,12 +31,8 @@ class TodoViewController: UIViewController/*,UITableViewDataSource */{
     }
     
     @IBAction func saveTodo(){
-        
-        
-        
         todoSaveArray.append(todoTextField.text!)
-        
-       userdefaults.set(todoSaveArray, forKey: "todoTitle")//
+        userdefaults.set(todoSaveArray, forKey: "todoTitle")//
         self.navigationController?.popViewController(animated: true)
     }
 
