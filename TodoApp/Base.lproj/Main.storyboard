@@ -40,7 +40,7 @@
                     <navigationItem key="navigationItem" id="cUh-z4-Zrk">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="d3J-rb-a2Q">
                             <connections>
-                                <segue destination="dbd-hv-bRb" kind="showDetail" action="showViewController:sender:" id="qf1-x5-Xg5"/>
+                                <segue destination="dbd-hv-bRb" kind="showDetail" identifier="nextView" action="showViewController:sender:" id="qf1-x5-Xg5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,7 +55,7 @@
         <!--Todo View Controller-->
         <scene sceneID="r8r-zo-el4">
             <objects>
-                <viewController id="dbd-hv-bRb" customClass="TodoViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="select" id="dbd-hv-bRb" customClass="TodoViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nkZ-zI-5ld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

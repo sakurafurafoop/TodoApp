@@ -12,8 +12,8 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
     
     //saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
     @IBOutlet var table: UITableView!//todoを表示させるためのTableView
-    
     var todoArray:[String] = []//todoを表示させる配列
+   
     
     //var saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
     
@@ -59,6 +59,20 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         userdefaults.set(todoArray, forKey: "todoTitle")//
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+       /* let TodoViewController = self.storyboard!.instantiateViewController(withIdentifier: "select")
+        performSegue(withIdentifier: "TodoViewController", sender: nil)*/
+        /*let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "select") as!
+        TodoViewController
+        self.present(nextView, animated: true, completion: nil)*/
+        hensyuSegue()
+    }
+    
+    func hensyuSegue() {
+        performSegue(withIdentifier: "nextView", sender: nil)
     }
     
     
