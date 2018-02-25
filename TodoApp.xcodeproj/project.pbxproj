@@ -15,6 +15,7 @@
 		18756EA72032D1D600827C52 /* TodoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18756EA62032D1D600827C52 /* TodoAppTests.swift */; };
 		18756EB22032D1D600827C52 /* TodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18756EB12032D1D600827C52 /* TodoAppUITests.swift */; };
 		18756EC02032D98000827C52 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18756EBF2032D98000827C52 /* TodoViewController.swift */; };
+		187E82E02041515A007C45D7 /* アートボード 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187E82DF2041515A007C45D7 /* アートボード 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		18756EB12032D1D600827C52 /* TodoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppUITests.swift; sourceTree = "<group>"; };
 		18756EB32032D1D600827C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18756EBF2032D98000827C52 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		187E82DF2041515A007C45D7 /* アートボード 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アートボード 1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		18756E902032D1D600827C52 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				187E82DF2041515A007C45D7 /* アートボード 1.png */,
 				18756E912032D1D600827C52 /* AppDelegate.swift */,
 				18756E932032D1D600827C52 /* ViewController.swift */,
 				18756E952032D1D600827C52 /* Main.storyboard */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18756E9C2032D1D600827C52 /* LaunchScreen.storyboard in Resources */,
+				187E82E02041515A007C45D7 /* アートボード 1.png in Resources */,
 				18756E992032D1D600827C52 /* Assets.xcassets in Resources */,
 				18756E972032D1D600827C52 /* Main.storyboard in Resources */,
 			);

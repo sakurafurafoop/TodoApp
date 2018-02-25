@@ -8,28 +8,31 @@
 
 import UIKit
 
-class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSource {
+class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSource ,UITableViewDelegate{
     
     //saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
     @IBOutlet var table: UITableView!//todoを表示させるためのTableView
     var todoArray:[String] = []//todoを表示させる配列
+    //var numberList = todoArray[IndexPath.row]
    
     
     //var saveTodoTitle: UserDefaults = UserDefaults.standard//ユーザーデフォルトにアクセス
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         table.dataSource = self
         todoArray = userdefaults.object(forKey: "todoTitle") as! [String]//todoArrayにuserdefaultsに入っている配列を代入する
         //todoTextField.text = saveTodoTitle.object(forKey:"todoTitle") as? String
         table.reloadData()
         //もしuserdefaultsが空っぽである場合
         if  userdefaults.object(forKey: "todoTitle") != nil{
-//          todoArray = saveTodoTitle.object(forKey: "todoTitle") as! [String]
-            print(userdefaults.object(forKey: "todoTitle"))
+            //todoArray = saveTodoTitle.object(forKey: "todoTitle") as! [String]
             
         }
+        table.delegate = self
+        table.dataSource = self
+        self.view.addSubview(table)
     }
     override func viewWillAppear(_ animated: Bool) {
         todoArray = userdefaults.object(forKey: "todoTitle") as! [String]
@@ -50,8 +53,24 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = todoArray[indexPath.row]
         return cell!
+        
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        /* let TodoViewController = self.storyboard!.instantiateViewController(withIdentifier: "select")
+         performSegue(withIdentifier: "TodoViewController", sender: nil)*/
+        /*let storyboard: UIStoryboard = self.storyboard!
+         let nextView = storyboard.instantiateViewController(withIdentifier: "select") as!
+         TodoViewController
+         self.present(nextView, animated: true, completion: nil)*/
+        
+        // tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        print("sa")
+        
+        self.performSegue(withIdentifier: "toTodoViewController", sender: nil)
+    }
     //削除する
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -59,22 +78,15 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         userdefaults.set(todoArray, forKey: "todoTitle")//
+        
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-       /* let TodoViewController = self.storyboard!.instantiateViewController(withIdentifier: "select")
-        performSegue(withIdentifier: "TodoViewController", sender: nil)*/
-        /*let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "select") as!
-        TodoViewController
-        self.present(nextView, animated: true, completion: nil)*/
-        hensyuSegue()
+   
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTodoViewController" {
+          //  let todoViewController:TodoViewController = segue.destination as! TodoViewController
+         //   todoViewController.numeberList = sender as! [String:String]
+        }
     }
-    
-    func hensyuSegue() {
-        performSegue(withIdentifier: "nextView", sender: nil)
-    }
-    
     
 
 }

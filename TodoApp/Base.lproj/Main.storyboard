@@ -46,6 +46,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="VSK-90-yu9" id="8AF-Nh-ebj"/>
+                        <segue destination="dbd-hv-bRb" kind="presentation" identifier="toTodoViewController" id="VQy-5X-cqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,4 +107,7 @@
             <point key="canvasLocation" x="136" y="132.23388305847078"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="VQy-5X-cqh"/>
+    </inferredMetricsTieBreakers>
 </document>
