@@ -56,19 +56,9 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
         
     }
     
+    var indexTest:Int = 0
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        /* let TodoViewController = self.storyboard!.instantiateViewController(withIdentifier: "select")
-         performSegue(withIdentifier: "TodoViewController", sender: nil)*/
-        /*let storyboard: UIStoryboard = self.storyboard!
-         let nextView = storyboard.instantiateViewController(withIdentifier: "select") as!
-         TodoViewController
-         self.present(nextView, animated: true, completion: nil)*/
-        
-        // tableView.deselectRow(at: indexPath, animated: true)
-        
-        
-        print("sa")
-        
+        indexTest = indexPath.row
         self.performSegue(withIdentifier: "toTodoViewController", sender: nil)
     }
     //削除する
@@ -81,10 +71,13 @@ class ViewController: /*UIViewController,*/TodoViewController, UITableViewDataSo
         
     }
    
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTodoViewController" {
-          //  let todoViewController:TodoViewController = segue.destination as! TodoViewController
-         //   todoViewController.numeberList = sender as! [String:String]
+            let secondViewController = segue.destination as! TodoViewController
+            //TodoViewController.todoArray[String] = sender as! [String : String]
+            //secondViewController.todoTextField.text = todoArray[indexTest]
+            print(indexTest)
+            print(todoArray[indexTest])
         }
     }
     

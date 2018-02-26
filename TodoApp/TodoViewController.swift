@@ -20,8 +20,14 @@ class TodoViewController: UIViewController/*,UITableViewDataSource */{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if  userdefaults.object(forKey: "todoTitle") != nil{
+        if userdefaults.object(forKey: "todoTitle") != nil{
             todoSaveArray = userdefaults.object(forKey:"todoTitle") as! [String]
+        }
+        
+        if todoTextField!.text != nil {
+            print("aaaaa")
+        }else{
+            print("bbbb")
         }
         
     }

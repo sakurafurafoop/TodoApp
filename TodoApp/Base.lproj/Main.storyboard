@@ -81,12 +81,12 @@
                         <viewLayoutGuide key="safeArea" id="4ea-zs-WG4"/>
                     </view>
                     <connections>
-                        <outlet property="todoTextField" destination="s5K-ht-ALu" id="3ne-Qt-8hB"/>
+                        <outlet property="todoTextField" destination="s5K-ht-ALu" id="X4W-Mv-t1q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0b-uf-SPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575.2" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1753" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cOQ-mc-l2h">
